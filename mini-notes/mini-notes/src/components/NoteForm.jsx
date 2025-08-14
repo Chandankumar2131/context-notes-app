@@ -9,7 +9,7 @@ const NoteForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!title || !content) return;
-    addNote(title, content);   
+    addNote(title, content);
     setTitle('');
     setContent('');
   };

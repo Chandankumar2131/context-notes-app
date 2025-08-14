@@ -1,15 +1,13 @@
 import React from 'react';
 import { useNotes } from '../context/NotesContext';
-import { useTheme } from '../context/ThemeContext';
 
 const NoteCard = ({ note }) => {
   const { deleteNote } = useNotes();
-  const { isDarkMode } = useTheme();
 
   return (
-    <div className={`p-4 rounded shadow ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-black'}`}>
+    <div className="p-4 bg-white rounded shadow">
       <h3 className="text-lg font-bold mb-2">{note.title}</h3>
-      <pre className="mb-4 whitespace-pre-wrap">{note.content}</pre>
+      <p className="text-gray-700 mb-4">{note.content}</p>
       <button
         onClick={() => deleteNote(note.id)}
         className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
@@ -21,3 +19,4 @@ const NoteCard = ({ note }) => {
 };
 
 export default NoteCard;
+
